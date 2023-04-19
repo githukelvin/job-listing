@@ -168,7 +168,7 @@ header {
   font-size: 0.7em;
 }
 .cards .card .filters {
-  width: 80%;
+  width: 100%;
   padding-bottom: 1em;
 }
 .cards .card .filters ul {
@@ -176,6 +176,10 @@ header {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   gap: 1em;
+}
+.cards .card .filters ul:nth-child(3) {
+  margin: 0;
+  gap: 0;
 }
 .cards .card .filters ul li {
   width: fit-content;
@@ -187,9 +191,6 @@ header {
   font-size: 1em;
   color: hsl(180, 29%, 50%);
   cursor: pointer;
-}
-.cards .card .filters ul li:last-child {
-  padding-left: -2em;
 }
 .cards .card .filters ul.active {
   background: hsl(180, 29%, 50%);

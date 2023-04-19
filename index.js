@@ -85,8 +85,7 @@ function tool() {
           let new_Featured = display();
           let stack = tool()
 
-        //   console.log(new_Featured)
-          console.log(stack)
+       
 
           return (parentDiv.innerHTML += `
                <div class="card">
@@ -105,7 +104,7 @@ function tool() {
         <div class="feature2">
           <span class="time">${postedAt}</span>
           <span class="type">${contract}</span>
-          <span class="location">${location} <span>Only</span></span>
+          <span class="location">${location} </span>
           </div>
       </div>
       <div class="filters">
