@@ -1,2 +1,6 @@
 @forward "./partials/";
 @use "./partials/fonts" as *;
+
+*{
+    font-family: 'medium';
+}

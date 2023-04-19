@@ -1,14 +1,17 @@
 @font-face {
-  font-family: "League Spartan";
+  font-family: "bold";
   src: url("../fonts/LeagueSpartan-Bold.woff2") format("woff2"), url("../fonts/LeagueSpartan-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "League Spartan";
+  font-family: "medium";
   src: url("../fonts/LeagueSpartan-Medium.woff2") format("woff2"), url("../fonts/LeagueSpartan-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
+}
+* {
+  font-family: "medium";
 }/*# sourceMappingURL=main.css.map */
