@@ -1,3 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+html, body {
+  background: hsl(180, 52%, 96%);
+}
+
+.container {
+  max-width: 375px;
+  margin-inline: auto;
+  width: 88%;
+}
+
 @font-face {
   font-family: "bold";
   src: url("../fonts/LeagueSpartan-Bold.woff2") format("woff2"), url("../fonts/LeagueSpartan-Bold.woff") format("woff");
@@ -12,6 +31,167 @@
   font-style: normal;
   font-display: swap;
 }
-* {
+header {
+  height: 155px;
+  background: hsl(180, 29%, 50%);
+  background-image: url(../images/bg-header-mobile.svg);
+}
+
+.cards {
+  margin-top: 3.5em;
+}
+.cards .card {
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 2.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-left: 1.7rem;
+  position: relative;
+}
+.cards .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: hsl(180, 29%, 50%);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.cards .card .img {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: -20px;
+}
+.cards .card .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+.cards .card .features {
+  margin-top: 2.2em;
+}
+.cards .card .features .feature1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.6em;
+}
+.cards .card .features .feature1 h3 {
+  color: hsl(180, 29%, 50%);
+  font-family: "bold";
+  font-size: 0.9em;
+}
+.cards .card .features .feature1 .span {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+.cards .card .features .feature1 .span span {
+  font-family: "bold";
+}
+.cards .card .features .feature1 .span .new {
+  color: hsl(180, 52%, 96%);
+  font-size: 0.8em;
+  padding: 0.4em 0.8em;
+  border-radius: 15px;
+  background: hsl(180, 29%, 50%);
+}
+.cards .card .features .feature1 .span .featured {
+  color: hsl(180, 52%, 96%);
+  font-size: 0.8em;
+  padding: 0.4em 0.8em;
+  border-radius: 15px;
+  background: hsl(180, 14%, 20%);
+}
+.cards .card .features p {
+  color: #000;
+  font-family: "bold";
+  font-size: 0.93em;
+  margin-block: 1em;
+}
+.cards .card .features .feature2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.4em;
+  margin-top: 1.1em;
+  position: relative;
+}
+.cards .card .features .feature2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 91%;
+  height: 1px;
+  background: hsl(180, 8%, 52%);
+}
+.cards .card .features .feature2 span {
   font-family: "medium";
+  color: hsl(180, 8%, 52%);
+  padding-bottom: 1.3em;
+}
+.cards .card .features .feature2 .time {
+  position: relative;
+}
+.cards .card .features .feature2 .time::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: -13px;
+  height: 4px;
+  border-radius: 100%;
+  width: 4px;
+  background: hsl(180, 8%, 52%);
+}
+.cards .card .features .feature2 .type {
+  position: relative;
+}
+.cards .card .features .feature2 .type::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: -13px;
+  height: 4px;
+  border-radius: 100%;
+  width: 4px;
+  background: hsl(180, 8%, 52%);
+}
+.cards .card .features .feature2 .location span {
+  padding: 0.1em;
+  font-size: 0.7em;
+}
+.cards .card .filters {
+  width: 80%;
+  padding-bottom: 1em;
+}
+.cards .card .filters ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1em;
+}
+.cards .card .filters ul li {
+  width: fit-content;
+  list-style: none;
+  padding: 0.55em 0.5em;
+  border-radius: 5px;
+  background: hsl(180, 31%, 95%);
+  font-family: "bold";
+  font-size: 1em;
+  color: hsl(180, 29%, 50%);
+  cursor: pointer;
+}
+.cards .card .filters ul li:last-child {
+  padding-left: -2em;
+}
+.cards .card .filters ul.active {
+  background: hsl(180, 29%, 50%);
+  color: hsl(180, 52%, 96%);
 }/*# sourceMappingURL=main.css.map */

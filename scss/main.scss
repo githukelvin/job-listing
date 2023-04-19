@@ -1,6 +1,184 @@
 @forward "./partials/";
 @use "./partials/fonts" as *;
+@use "./partials/colors" as *;
 
-*{
-    font-family: 'medium';
+
+header{
+    height: 155px;
+    background:$DesaturatedDarkCyan ;
+    background-image: url(../images/bg-header-mobile.svg);
+}
+.cards{
+    margin-top: 3.5em;
+    .card{
+        background: #fff;
+        border-radius: 10px;
+        margin-bottom: 2.7rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        padding-left: 1.7rem;
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: $DesaturatedDarkCyan;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .img{
+            $size:45px;
+            width: $size;
+            height: $size;
+            position: absolute;
+            top: -20px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                border-radius: 50%;
+            }
+      
+
+        }
+         .features {
+            margin-top: 2.2em;
+            .feature1{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1.6em;
+                h3{
+                   color: $DesaturatedDarkCyan; 
+                   font-family: 'bold';
+                   font-size: .9em;
+                }
+                .span{
+                    display: flex;
+                     flex-direction: row;
+                     gap: .5em;
+                    span{
+                        
+                        font-family: 'bold';
+                      
+                    }
+                    .new {
+                        color: $LightGrayishCyanBackground;
+                        font-size: .8em;
+                        padding: 0.4em .8em;
+                        border-radius: 15px;
+                        background: $DesaturatedDarkCyan;
+                    }
+
+                    .featured {
+                        color: $LightGrayishCyanBackground;
+                        font-size: .8em;
+                        padding: 0.4em 0.8em;
+                        border-radius: 15px;
+                        background: $VeryDarkGrayishCyan;
+                    }
+                }
+            }
+            p{
+                color: #000;
+                font-family: 'bold';
+                font-size: .93em;
+                margin-block: 1em;
+            }
+            .feature2{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1.4em;
+                margin-top:1.1em;
+                position: relative;
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width:91%;
+                    height: 1px;
+                    background: $DarkGrayishCyan;
+                }
+
+            
+            span{
+                font-family: 'medium';
+                color: $DarkGrayishCyan;
+                padding-bottom: 1.3em;
+
+            }
+            @mixin circle{
+                position: relative;
+                
+                    &::after {
+                        $sir: 4px;
+                        content: "";
+                        position: absolute;
+                        top: 7px;
+                        right: -13px;
+                        height: $sir;
+                        border-radius: 100%;
+                        width: $sir ;
+                        background: $DarkGrayishCyan;
+                
+                    }
+            }
+            .time{
+              
+                @include circle;
+            }
+            .type{
+                @include circle;
+
+            }
+            .location{
+                span{
+                padding: .1em ;
+                    font-size: .7em;
+                }
+            }
+                
+            }
+
+        }
+       .filters{
+                width: 80%;
+                padding-bottom: 1em ;
+              ul{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: auto;
+                gap: 1em;
+            
+                li{
+                    width: fit-content;
+                    list-style: none;
+                    padding: .55em .5em;
+                    border-radius: 5px;
+                    background: $LightGrayishCyanFilterTablets;
+                    font-family: 'bold';
+                    font-size: 1em;
+                    color: $DesaturatedDarkCyan;
+                    cursor: pointer;
+                &:last-child {
+                        padding-left: -2em;
+                    }
+                }
+               
+                &.active{
+                     background: $DesaturatedDarkCyan;
+                     color: $LightGrayishCyanBackground;
+                }
+              }
+
+       }
+    }
 }
