@@ -16,6 +16,13 @@ html, body {
   margin-inline: auto;
   width: 88%;
 }
+@media (min-width: 800px) {
+  .container {
+    max-width: 1440px;
+    width: 70%;
+    margin-inline: auto;
+  }
+}
 
 @font-face {
   font-family: "bold";
@@ -34,11 +41,23 @@ html, body {
 header {
   height: 155px;
   background: hsl(180, 29%, 50%);
-  background-image: url(../images/bg-header-mobile.svg);
+  background-image: url("../images/bg-header-mobile.svg");
+}
+@media (min-width: 800px) {
+  header {
+    background-image: url("../images/bg-header-desktop.svg");
+  }
 }
 
 .cards {
+  display: flex;
+  flex-direction: column;
   margin-top: 3.5em;
+}
+@media (min-width: 800px) {
+  .cards {
+    margin-top: 5em;
+  }
 }
 .cards .card {
   background: #fff;
@@ -49,6 +68,16 @@ header {
   gap: 1em;
   padding-left: 1.7rem;
   position: relative;
+}
+@media (min-width: 800px) {
+  .cards .card {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0em 2.3em;
+    align-items: center;
+    gap: 1.9em;
+    margin-bottom: 1.8em;
+  }
 }
 .cards .card::before {
   content: "";
@@ -67,6 +96,13 @@ header {
   position: absolute;
   top: -20px;
 }
+@media (min-width: 800px) {
+  .cards .card .img {
+    width: 200px;
+    height: 100%;
+    position: unset;
+  }
+}
 .cards .card .img img {
   width: 100%;
   height: 100%;
@@ -76,16 +112,32 @@ header {
 .cards .card .features {
   margin-top: 2.2em;
 }
+@media (min-width: 800px) {
+  .cards .card .features {
+    width: 100%;
+    margin-top: 1.8em;
+  }
+}
 .cards .card .features .feature1 {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1.6em;
 }
+@media (min-width: 800px) {
+  .cards .card .features .feature1 {
+    gap: 0.5em;
+  }
+}
 .cards .card .features .feature1 h3 {
   color: hsl(180, 29%, 50%);
   font-family: "bold";
   font-size: 0.9em;
+}
+@media (min-width: 800px) {
+  .cards .card .features .feature1 h3 {
+    font-size: 1.2em;
+  }
 }
 .cards .card .features .feature1 .span {
   display: flex;
@@ -102,6 +154,11 @@ header {
   border-radius: 15px;
   background: hsl(180, 29%, 50%);
 }
+@media (min-width: 800px) {
+  .cards .card .features .feature1 .span .new {
+    padding: 0.5em 0.8em;
+  }
+}
 .cards .card .features .feature1 .span .featured {
   color: hsl(180, 52%, 96%);
   font-size: 0.8em;
@@ -109,19 +166,39 @@ header {
   border-radius: 15px;
   background: hsl(180, 14%, 20%);
 }
+@media (min-width: 800px) {
+  .cards .card .features .feature1 .span .featured {
+    padding: 0.5em 0.8em;
+  }
+}
 .cards .card .features p {
   color: #000;
   font-family: "bold";
   font-size: 0.93em;
   margin-block: 1em;
 }
+@media (min-width: 800px) {
+  .cards .card .features p {
+    font-size: 1.35em;
+    margin-top: 0.5em;
+    margin-bottom: 0em;
+  }
+}
 .cards .card .features .feature2 {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1.4em;
+  width: fit-content;
   margin-top: 1.1em;
   position: relative;
+}
+@media (min-width: 800px) {
+  .cards .card .features .feature2 {
+    width: 100%;
+    height: fit-content;
+    margin-top: 0.8em;
+  }
 }
 .cards .card .features .feature2::after {
   content: "";
@@ -132,10 +209,22 @@ header {
   height: 1px;
   background: hsl(180, 8%, 52%);
 }
+@media (min-width: 800px) {
+  .cards .card .features .feature2::after {
+    content: none;
+  }
+}
 .cards .card .features .feature2 span {
   font-family: "medium";
   color: hsl(180, 8%, 52%);
   padding-bottom: 1.3em;
+}
+@media (min-width: 800px) {
+  .cards .card .features .feature2 span {
+    padding-bottom: 1.9em;
+    font-size: 1.1em;
+    width: fit-content;
+  }
 }
 .cards .card .features .feature2 .time {
   position: relative;
@@ -150,6 +239,12 @@ header {
   width: 4px;
   background: hsl(180, 8%, 52%);
 }
+@media (min-width: 800px) {
+  .cards .card .features .feature2 .time::after {
+    top: 4px;
+    right: -23px;
+  }
+}
 .cards .card .features .feature2 .type {
   position: relative;
 }
@@ -163,26 +258,59 @@ header {
   width: 4px;
   background: hsl(180, 8%, 52%);
 }
+@media (min-width: 800px) {
+  .cards .card .features .feature2 .type::after {
+    top: 4px;
+    right: -23px;
+  }
+}
+@media (min-width: 800px) {
+  .cards .card .features .feature2 .type {
+    margin-left: 1em;
+  }
+}
 .cards .card .features .feature2 .location span {
   padding: 0.1em;
   font-size: 0.7em;
 }
-.cards .card .filters {
+@media (min-width: 800px) {
+  .cards .card .features .feature2 .location {
+    margin-left: 1em;
+  }
+}
+.cards .filters {
+  display: grid;
   width: 100%;
   padding-bottom: 1em;
 }
-.cards .card .filters ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
+@media (min-width: 800px) {
+  .cards .filters {
+    width: 100%;
+  }
+}
+.cards .filters ul {
+  display: flex;
+  flex-wrap: wrap;
   gap: 1em;
 }
-.cards .card .filters ul:nth-child(3) {
+@media (min-width: 800px) {
+  .cards .filters ul {
+    flex-wrap: nowrap;
+    gap: 1em;
+    margin-top: 1em;
+    margin-left: 2.7em;
+  }
+}
+.cards .filters ul:nth-child(3) {
   margin: 0;
   gap: 0;
 }
-.cards .card .filters ul li {
-  width: fit-content;
+.cards .filters ul li {
+  display: flex;
+  flex-basis: calc(33.33% - 1em);
+  justify-content: center;
+  align-items: center;
+  width: min-content;
   list-style: none;
   padding: 0.55em 0.5em;
   border-radius: 5px;
@@ -192,7 +320,15 @@ header {
   color: hsl(180, 29%, 50%);
   cursor: pointer;
 }
-.cards .card .filters ul.active {
+@media (min-width: 800px) {
+  .cards .filters ul li {
+    padding: 0.5em 0.5em;
+    font-size: 1.1em;
+    flex-basis: 0;
+    font-size: 1em;
+  }
+}
+.cards .filters ul.active {
   background: hsl(180, 29%, 50%);
   color: hsl(180, 52%, 96%);
 }/*# sourceMappingURL=main.css.map */

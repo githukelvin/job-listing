@@ -1,5 +1,7 @@
 // use color
 @use "./colors" as *;
+// use mixins
+@use "./mixins" as *;
 
 * {
     padding: 0;
@@ -17,4 +19,9 @@ html,body{
     max-width: 375px;
     margin-inline: auto;
     width: 88%;
+    @include desktop{
+        max-width: 1440px;
+        width: 70%;
+        margin-inline: auto;
+    }
 }

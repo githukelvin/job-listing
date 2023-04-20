@@ -1,15 +1,26 @@
 @forward "./partials/";
 @use "./partials/fonts" as *;
 @use "./partials/colors" as *;
+@use "./partials/mixins" as *;
 
 
 header{
     height: 155px;
     background:$DesaturatedDarkCyan ;
-    background-image: url(../images/bg-header-mobile.svg);
+    background-image: url('../images/bg-header-mobile.svg');
+    // include
+    @include desktop{
+        // height: 160px;
+        background-image: url('../images/bg-header-desktop.svg');
+    }
 }
 .cards{
+    display: flex;
+    flex-direction: column;
     margin-top: 3.5em;
+    @include desktop{
+        margin-top: 5em;
+    }
     .card{
         background: #fff;
         border-radius: 10px;
@@ -19,6 +30,14 @@ header{
         gap: 1em;
         padding-left: 1.7rem;
         position: relative;
+        @include desktop{
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0em 2.3em;
+            align-items: center;
+            gap: 1.9em;
+            margin-bottom: 1.8em;
+        }
         &::before{
             content: "";
             position: absolute;
@@ -37,10 +56,16 @@ header{
             height: $size;
             position: absolute;
             top: -20px;
+            @include desktop{
+                $size: 200px;
+                width: $size;
+                height: 100%;
+                position: unset;
+            }
             img{
                 width: 100%;
                 height: 100%;
-                object-fit: contain;
+                object-fit:contain;
                 border-radius: 50%;
             }
       
@@ -48,39 +73,55 @@ header{
         }
          .features {
             margin-top: 2.2em;
+            @include desktop{
+                width: 100%;
+                margin-top: 1.8em;
+            }
             .feature1{
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 gap: 1.6em;
+                @include desktop {
+                        gap: .5em;
+                    }
                 h3{
                    color: $DesaturatedDarkCyan; 
                    font-family: 'bold';
                    font-size: .9em;
+                   @include desktop{
+                          font-size: 1.2em;
+                   }
                 }
                 .span{
                     display: flex;
                      flex-direction: row;
                      gap: .5em;
+                     
+
                     span{
                         
                         font-family: 'bold';
+                    
                       
                     }
-                    .new {
+                    @mixin feat($color){
                         color: $LightGrayishCyanBackground;
-                        font-size: .8em;
-                        padding: 0.4em .8em;
-                        border-radius: 15px;
-                        background: $DesaturatedDarkCyan;
+                            font-size: .8em;
+                            padding: 0.4em .8em;
+                            border-radius: 15px;
+                            background: $color;
+                            @include desktop{
+                                // font-size: 1em;
+                                padding: 0.5em .8em;
+                            }
+                    }
+                    .new {
+                       @include feat($DesaturatedDarkCyan);
                     }
 
                     .featured {
-                        color: $LightGrayishCyanBackground;
-                        font-size: .8em;
-                        padding: 0.4em 0.8em;
-                        border-radius: 15px;
-                        background: $VeryDarkGrayishCyan;
+                        @include feat($VeryDarkGrayishCyan)
                     }
                 }
             }
@@ -89,13 +130,24 @@ header{
                 font-family: 'bold';
                 font-size: .93em;
                 margin-block: 1em;
+                @include desktop{
+                    font-size: 1.35em;
+                    margin-top: .5em;
+                    margin-bottom:0em;
+                }
             }
             .feature2{
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 gap: 1.4em;
+                width: fit-content;
                 margin-top:1.1em;
+                @include desktop{
+                   width: 100%;
+                   height: fit-content;
+                   margin-top: .8em;
+                }
                 position: relative;
 
                 &::after{
@@ -106,6 +158,9 @@ header{
                     width:91%;
                     height: 1px;
                     background: $DarkGrayishCyan;
+                    @include desktop {
+                            content: none;
+                        }
                 }
 
             
@@ -113,6 +168,12 @@ header{
                 font-family: 'medium';
                 color: $DarkGrayishCyan;
                 padding-bottom: 1.3em;
+                @include desktop{
+                    padding-bottom: 1.9em;
+                    font-size: 1.1em;
+                    width: fit-content;
+
+                }
 
             }
             @mixin circle{
@@ -128,21 +189,34 @@ header{
                         border-radius: 100%;
                         width: $sir ;
                         background: $DarkGrayishCyan;
-                
+                        @include desktop {
+                            $sir:3px;
+                            top: 4px;
+                            right: -23px;
+                        }
                     }
             }
             .time{
-              
                 @include circle;
             }
             .type{
                 @include circle;
+                @include desktop {
+                    margin-left: 1em;
+                  
+                }
+           
 
             }
             .location{
                 span{
                 padding: .1em ;
-                    font-size: .7em;
+                font-size: .7em;
+                
+                }
+                @include desktop {
+                    margin-left: 1em;
+                }
                 }
             }
                 
@@ -150,19 +224,33 @@ header{
 
         }
        .filters{
-                width: 100%;
-                padding-bottom: 1em ;
+        display: grid;
+         width: 100%;
+        padding-bottom: 1em ;
+                @include desktop {
+                    width:100%;
+                }
               ul{
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: auto;
+                display: flex;
+                flex-wrap: wrap;
                 gap: 1em;
+                
+                @include desktop {
+                    flex-wrap: nowrap;
+                    gap: 1em;
+                    margin-top: 1em;
+                    margin-left: 2.7em;
+                }
             &:nth-child(3) {
                     margin: 0;
                     gap: 0;
                 }
                 li{
-                    width: fit-content;
+                    display: flex;
+                    flex-basis: calc(33.33% - 1em);
+                    justify-content: center;
+                    align-items: center;
+                    width: min-content;
                     list-style: none;
                     padding: .55em .5em;
                     border-radius: 5px;
@@ -171,6 +259,12 @@ header{
                     font-size: 1em;
                     color: $DesaturatedDarkCyan;
                     cursor: pointer;
+                    @include desktop {
+                        padding: .5em .5em;
+                        font-size: 1.1em;
+                        flex-basis: 0;
+                        font-size: 1em;
+                    }
                
                 }
                
@@ -181,5 +275,4 @@ header{
               }
 
        }
-    }
 }
