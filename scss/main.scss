@@ -38,17 +38,6 @@ header{
             gap: 1.9em;
             margin-bottom: 1.8em;
         }
-        &::before{
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: $DesaturatedDarkCyan;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-        }
 
         .img{
             $size:45px;
@@ -97,13 +86,13 @@ header{
                     display: flex;
                      flex-direction: row;
                      gap: .5em;
+                    
                      
 
                     span{
-                        
+                        display: flex;
                         font-family: 'bold';
-                    
-                      
+                        align-items: center;
                     }
                     @mixin feat($color){
                         color: $LightGrayishCyanBackground;
@@ -267,12 +256,18 @@ header{
                     }
                
                 }
-               
-                &.active{
-                     background: $DesaturatedDarkCyan;
-                     color: $LightGrayishCyanBackground;
-                }
               }
 
        }
 }
+.card.active::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 5px;
+                height: 100%;
+                background: $DesaturatedDarkCyan;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+        }

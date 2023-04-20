@@ -1,6 +1,5 @@
 
 let  parentDiv = document.querySelector('.cards')
-
 fetch("data.json")
   .then((response) => response.json())
   .then((data) =>
@@ -20,75 +19,66 @@ fetch("data.json")
           languages,
           tools,
         }) => {
-function display() {
-  if (isNew && featured) {
-    return `
+      function display() {
+        if (isNew && featured) {
+          return `
       <span class="new">NEW!</span>
       <span class="featured">FEATURED</span>
     `;
-  }
-  if (isNew) {
-    return `
+        }
+        if (isNew) {
+          return `
       <span class="new">NEW!</span>
     `;
-  }
-  if (featured) {
-    return `
+        }
+        if (featured) {
+          return `
       <span class="featured">FEATURED</span>
     `;
-  }
-  return `
+        }
+        return `
     <span></span>
   `;
-}
-          // function arrays
-// function displayArray() {
-//   if (languages.length === 0) {
-//     return "";
-//   } else {
-//     return languages.map((rol) => `<li>${rol}</li>`);
-//   }
-// }
+      }
+      function actv(){
+        if(featured){
+          return `
+             <div class="card active">
+          `;
+        }
+        else{
+          return `
+             <div class="card">
+          `;
+        }
+      }
 
-function displayArray() {
-  let result = "";
-  if (languages.length === 0) {
-    return result;
-  } else {
-    languages.forEach((rol) => {
-      result += `<li>${rol}</li>`;
-    });
-    return result;
-  }
-}
 
-// tool
-// function tool() {
-//   if (tools.length === 0) {
-//     return "";
-//   } else {
-//     return tools.map((tool) => `<li class="">${tool}</li>`);
-//   }
-// }
-function tool() {
-  let result = "";
-  if (tools.length === 0) {
-    return result;
-  } else {
-    tools.forEach((tool) => {
-      result += `<li class="">${tool}</li>`;
-    });
-    return result;
-  }
-}
+    function displayArray() {
+      let result = "";
+      if (languages.length === 0) {
+        return result;
+      } else {
+        languages.forEach((rol) => {
+          result += `<li>${rol}</li>`;
+        });
+        return result;
+      }
+    }
+    function tool() {
+      let result = "";
+      if (tools.length === 0) {
+        return result;
+      } else {
+        tools.forEach((tool) => {
+          result += `<li class="">${tool}</li>`;
+        });
+        return result;
+      }
+    }
 
-          let new_Featured = display();
-          let stack = tool()
-
-       
-
-          return (parentDiv.innerHTML += `
-               <div class="card">
+      return (parentDiv.innerHTML += `
+    ${actv()}
       <div class="img">
         <img src="${logo}" alt="photosnanp">
       </div>
@@ -120,6 +110,7 @@ function tool() {
         }
       )
   );
+
 
 
 

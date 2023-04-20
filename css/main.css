@@ -79,17 +79,6 @@ header {
     margin-bottom: 1.8em;
   }
 }
-.cards .card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 100%;
-  background: hsl(180, 29%, 50%);
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
 .cards .card .img {
   width: 45px;
   height: 45px;
@@ -145,7 +134,9 @@ header {
   gap: 0.5em;
 }
 .cards .card .features .feature1 .span span {
+  display: flex;
   font-family: "bold";
+  align-items: center;
 }
 .cards .card .features .feature1 .span .new {
   color: hsl(180, 52%, 96%);
@@ -328,7 +319,15 @@ header {
     font-size: 1em;
   }
 }
-.cards .filters ul.active {
+
+.card.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
   background: hsl(180, 29%, 50%);
-  color: hsl(180, 52%, 96%);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }/*# sourceMappingURL=main.css.map */
