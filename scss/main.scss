@@ -10,7 +10,6 @@ header{
     background-image: url('../images/bg-header-mobile.svg');
     // include
     @include desktop{
-        // height: 160px;
         background-image: url('../images/bg-header-desktop.svg');
     }
 }
@@ -101,7 +100,6 @@ header{
                             border-radius: 15px;
                             background: $color;
                             @include desktop{
-                                // font-size: 1em;
                                 padding: 0.5em .8em;
                             }
                     }
@@ -234,26 +232,25 @@ header{
                     margin: 0;
                     gap: 0;
                 }
+                
                 li{
                     display: flex;
                     flex-basis: calc(33.33% - 1em);
-                    justify-content: center;
-                    align-items: center;
-                    width: min-content;
-                    list-style: none;
+                    @include list(1em);
                     padding: .55em .5em;
                     border-radius: 5px;
-                    background: $LightGrayishCyanFilterTablets;
-                    font-family: 'bold';
-                    font-size: 1em;
-                    color: $DesaturatedDarkCyan;
-                    cursor: pointer;
+                   
+                    &:hover {
+                            background: $DesaturatedDarkCyan;
+                            color: $LightGrayishCyanFilterTablets;
+                        }
                     @include desktop {
                         padding: .5em .5em;
                         font-size: 1.1em;
                         flex-basis: 0;
                         font-size: 1em;
                     }
+                
                
                 }
               }
@@ -271,3 +268,63 @@ header{
                 border-top-left-radius: 10px;
                 border-bottom-left-radius: 10px;
         }
+.bar {
+    position: absolute;
+    background: #fff;
+    padding: 1.2em 2.3em;
+    top: 120px;
+    left: 237px;
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    .searchs{
+        display: flex;
+        gap: .8em;
+        .search {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+
+            // top: -5px;
+            li {
+                @include list(1em);
+                padding: .6em .75em;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+
+            }
+
+            .xmark {
+                $wih: 32px;
+                background: $VeryDarkGrayishCyan;
+                cursor: pointer;
+                width: $wih;
+                height: $wih;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                display: grid;
+                place-content: center;
+
+                svg{
+                    color: #fff;
+                    font-size: 1.5em;
+                }
+
+            }
+            }
+
+    }
+   
+    p{
+        font-family: 'bold';
+        color: $DesaturatedDarkCyan;
+        cursor: pointer;
+        padding-bottom: 0;
+        top: -3px;
+        height:min-content ;
+        text-transform: capitalize;
+        border-bottom: 1px solid  $DesaturatedDarkCyan;
+    }
+}

@@ -1,6 +1,22 @@
+@use "./colors" as *;
+
 // mixin for desktop min 800px
 @mixin desktop{
     @media (min-width: 800px){
         @content;
     }
+}
+
+
+@mixin list($gt) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+    list-style: none;
+    background: $LightGrayishCyanFilterTablets;
+    font-family: 'bold';
+    font-size:$gt ;
+    color: $DesaturatedDarkCyan;
+    cursor: pointer;
 }
