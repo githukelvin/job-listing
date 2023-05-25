@@ -117,6 +117,10 @@ header{
                 font-family: 'bold';
                 font-size: .93em;
                 margin-block: 1em;
+                cursor: pointer;
+                &:hover{
+                    color: $DesaturatedDarkCyan;
+                }
                 @include desktop{
                     font-size: 1.35em;
                     margin-top: .5em;
@@ -216,6 +220,7 @@ header{
         padding-bottom: 1em ;
                 @include desktop {
                     width:100%;
+                   
                 }
               ul{
                 display: flex;
@@ -227,6 +232,10 @@ header{
                     gap: 1em;
                     margin-top: 1em;
                     margin-left: 2.7em;
+                    @include tabs {
+                           display: grid;
+                            grid-template-columns: repeat(2,1fr);
+                        }
                 }
             &:nth-child(3) {
                     margin: 0;
@@ -235,21 +244,25 @@ header{
                 
                 li{
                     display: flex;
-                    flex-basis: calc(33.33% - 1em);
                     @include list(1em);
                     padding: .55em .5em;
                     border-radius: 5px;
-                   
+                    flex-basis: calc(33.33% - 1em);
                     &:hover {
                             background: $DesaturatedDarkCyan;
                             color: $LightGrayishCyanFilterTablets;
                         }
+                    @include tabs {
+                        flex-wrap: wrap;
+                        flex-basis: 2;
+                    }
                     @include desktop {
                         padding: .5em .5em;
                         font-size: 1.1em;
                         flex-basis: 0;
                         font-size: 1em;
                     }
+                   
                 
                
                 }
@@ -273,12 +286,15 @@ header{
     background: #fff;
     padding: 1.2em 2.3em;
     top: 120px;
-    left: 237px;
+    left: 5%;
     display: none;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border-radius: 5px;
+    @include desktop{
+        left:232px;
+    }
     .searchs{
         display: flex;
         gap: .8em;
@@ -298,7 +314,7 @@ header{
 
             .xmark {
                 $wih: 32px;
-                background: $VeryDarkGrayishCyan;
+                background: $DesaturatedDarkCyan;
                 cursor: pointer;
                 width: $wih;
                 height: $wih;
@@ -306,7 +322,14 @@ header{
                 border-bottom-right-radius: 5px;
                 display: grid;
                 place-content: center;
-
+                background-image: url("../images/xmark-solid.svg");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                &:hover{
+                    background-image: url("../images/xmark-solid.svg");
+                    background: $VeryDarkGrayishCyan;
+                }
                 svg{
                     color: #fff;
                     font-size: 1.5em;

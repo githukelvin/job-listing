@@ -23,5 +23,9 @@ html,body{
         max-width: 1440px;
         width: 70%;
         margin-inline: auto;
+        @include tabs{
+            width: 90%;
+
+        }
     }
 }

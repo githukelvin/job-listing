@@ -6,7 +6,11 @@
         @content;
     }
 }
-
+@mixin tabs{
+    @media (max-width: 900px) {
+        @content;
+    }
+}
 
 @mixin list($gt) {
     display: flex;

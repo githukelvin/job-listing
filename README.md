@@ -1,6 +1,41 @@
-
-
 # job-listing
+
+async function filterData() {
+  try {
+    const response = await fetch("./data.json");
+    const data = await response.json();
+   
+    data.map(({role,languages,tools})=>{
+      let arry=[role,languages,tools]
+      console.log(arry)
+      function filterJobs(data, languages, tools) {
+        return data.filter((job) => {
+          const hasLanguage = languages.every((language) =>
+            job.languages.includes(language)
+          );
+          const hasTool = tools.every((tool) => job.tools.includes(tool));
+          return hasLanguage && hasTool;
+        });
+      }
+      
+      filterJobs(data, languages, tools)
+    })
+    
+
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
+}
+/**
+ * @author kelvin
+ */
+/* 
+
+  const transformedData = data.map(({ role, languages, tools }) => [
+       [role, ...languages, ...tools],
+     ]);
+     console.log(transformedData);
+*/
 
  <div class="card">
       <div class="img">
